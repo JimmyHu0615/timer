@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huaweisoft.waterworks.dao.JobMapper" >
+
+<select id="getJobAndTriggerDetails" resultType="com.huaweisoft.waterworks.model.GetJobResp">
+	SELECT
+	JOB_NAME as jobName,
+	JOB_GROUP as jobGroup,
+	TRIGGER_NAME as triggerNAME,
+	TRIGGER_GROUP as triggerGroup,
+	CRON_EXPRESSION as cronExpression
+FROM
+	qrtz_job_details j
+LEFT JOIN qrtz_cron_triggers c ON j.JOB_NAME = c.TRIGGER_NAME
+AND j.JOB_GROUP = c.TRIGGER_GROUP
+
+</select>
+
+</mapper>
