@@ -12,7 +12,7 @@
 		</commentGenerator>
 
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://v-2008-dev76:3306/quartz?characterEncoding=utf8"
-			userId="root" password="1q2w#E$R" />
+			userId="" password="" />
 
 		<javaModelGenerator targetPackage="com.huaweisoft.waterworks.model" targetProject="D:\WorkSpace\timer\src\main\java">
 			<property name="enableSubPackages" value="false" />
